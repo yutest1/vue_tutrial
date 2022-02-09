@@ -8,10 +8,14 @@ const app = Vue.createApp({
       // console.log('Clicked!')
       if(this.newItem === '') return
       let todo = {
-        item: this.newItem
+        item: this.newItem,
+        isDone: false
       }
       this.todos.push(todo)
       this.newItem = ''
+    },
+    deleteItem: function(index) {
+      this.todos.splice(index, 1)
     }
   }
 })
